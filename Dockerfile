@@ -22,7 +22,7 @@ COPY frontend frontend
 RUN npm run build -w frontend
 
 # stage 2 - target
-FROM node:23-alpine AS target
+FROM --platform=$BUILDPLATFORM node:23-alpine AS target
 
 WORKDIR /usr/src/app
 
